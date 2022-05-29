@@ -1,0 +1,28 @@
+
+desktop-image: "framework_bg.png"
+title-text: ""
+#terminal-box: "terminal_*.png"
+terminal-left:"885"
+terminal-top: "250"
+terminal-width: "58%"
+terminal-height: "65%"
+
++ boot_menu {
+    visible = true
+    left = 6%
+    top = 40%
+    width = 500
+    height = 500
+    menu_pixmap_style = "menu_*.png"
+    item_font = "Unifont Regular 16"
+    item_color = "#C4C4C4"
+    selected_item_font = "Unifont Regular 16"
+    selected_item_color= "#FFFFFF"
+    selected_item_pixmap_style = "select_*.png"
+    item_height = 50
+    item_padding = 10
+    item_spacing = 20
+    item_icon_space = 0
+    icon_width = 0
+    icon_height = 0
+}
