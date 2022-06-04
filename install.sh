@@ -35,16 +35,16 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 #WM AND XORG INSTALL
 
 echo "installing web browser"
-sudo pacman -S chromium
+sudo pacman -S chromium --noconfirm
 
 echo "installing terminal emulator"
-yay -S alacritty
+yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
-pacman -S krita
+pacman -S krita vlc --noconfirm
 
 echo "installing xorg and window manager"
-pacman -S xorg xclip xf86-video-intel qtile rofi
+pacman -S xorg xclip xf86-video-intel qtile rofi --noconfirm
 
 #BLUETOOTH SETUP
 
