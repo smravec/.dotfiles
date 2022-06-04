@@ -1,3 +1,6 @@
+#!/bin/sh
+
+#BASE INSTALL
 
 echo "creating base home dirs"
 mkdir /home/simon/Downloads
@@ -11,7 +14,7 @@ mkdir /home/simon/Pictures/Wallpapers
 mkdir /home/simon/School
 
 echo "installing packages"
-sudo pacman -Syu cmatrix man-db man-pages libmagick --noconfirm
+sudo pacman -S cmatrix man-db man-pages libmagick --noconfirm
 
 echo "setting up AUR"
 git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
@@ -26,5 +29,26 @@ sudo systemctl disable getty@tty2.service
 
 echo "setting up grub"
 sudo cp  ./grub/grub /etc/default/grub
-sudo cp -r  ./grub/theme/Framework-Variant1 /usr/share/grub/themes/
+sudo cp -r  ./grub/Framework-Variant1 /usr/share/grub/themes/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+#WM AND XORG INSTALL
+
+echo "installing web browser"
+sudo pacman -S chromium
+
+echo "installing terminal emulator"
+yay -S alacritty
+
+echo "installing other gui programs"
+pacman -S krita
+
+echo "installing xorg and window manager"
+pacman -S xorg xclip xf86-video-intel qtile rofi
+
+#BLUETOOTH SETUP
+
+echo "setting up bluetooth"
+sudo pacman -S blueman
+
+
