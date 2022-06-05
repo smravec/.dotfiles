@@ -21,11 +21,7 @@ git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
 ( cd /home/simon/Downloads/yay && makepkg -si --noconfirm )
 
 echo "installing packages from AUR"
-yay -Syu acpi feh kpcli ly --noconfirm
-
-echo "setting up display manager"
-sudo systemctl enable ly.service
-sudo systemctl disable getty@tty2.service
+yay -Syu acpi feh kpcli --noconfirm
 
 echo "setting up grub"
 sudo cp  ./grub/grub /etc/default/grub
@@ -41,14 +37,28 @@ echo "installing terminal emulator"
 yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
-pacman -S krita vlc --noconfirm
+sudo pacman -S krita vlc --noconfirm
 
 echo "installing xorg and window manager"
-pacman -S xorg xclip xf86-video-intel qtile rofi --noconfirm
+sudo pacman -S xorg xclip xorg-xinit xf86-video-intel qtile rofi --noconfirm
+
+cp ./wm/xorg/.xinitrc /home/simon/
+cp ./wm/xorg/.Xresources /home/simon/
+
+echo "setting up clean boot"
+sudo cp ./clean-boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
+
+sudo rm /var/log/lastlog
+sudo touch /var/log/lastlog
+sudo chattr +i /var/log/lastlog
+
+cp ./clean-boot/.bash_profile /home/simon/
+
+
 
 #BLUETOOTH SETUP
 
-echo "setting up bluetooth"
-sudo pacman -S blueman
+echo "setting up audio and  bluetooth"
+sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
 
 
