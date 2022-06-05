@@ -28,6 +28,10 @@ sudo cp  ./grub/grub /etc/default/grub
 sudo cp -r  ./grub/Framework-Variant1 /usr/share/grub/themes/
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
+echo "setting up git"
+git config --global user.name "simon"
+git config --global user.email "simon.mravec@gmail.com"
+
 #WM AND XORG INSTALL
 
 echo "installing web browser"
@@ -38,6 +42,7 @@ yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
 sudo pacman -S krita vlc --noconfirm
+yay -S visual-studio-code-bin --noconfirm
 
 echo "installing xorg and window manager"
 sudo pacman -S xorg xclip xorg-xinit xf86-video-intel qtile rofi --noconfirm
@@ -54,11 +59,15 @@ sudo chattr +i /var/log/lastlog
 
 cp ./clean-boot/.bash_profile /home/simon/
 
+sudo cp ./clean-boot/20-quiet-printk.conf /etc/sysctl.d/
 
+sudo cp ./clean-boot/mkinitcpio.conf /etc/
+sudo mkinitcpio -p linux
 
 #BLUETOOTH SETUP
 
 echo "setting up audio and  bluetooth"
 sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
 
-
+echo "rebooting system..."
+sudo reboot
