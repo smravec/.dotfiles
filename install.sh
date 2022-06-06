@@ -13,8 +13,11 @@ mkdir /home/simon/Pictures
 mkdir /home/simon/Pictures/Wallpapers
 mkdir /home/simon/School
 
+echo "refreshing pacman"
+sudo pacman -Syu --noconfirm
+
 echo "installing packages"
-sudo pacman -S cmatrix man-db man-pages libmagick --noconfirm
+sudo pacman -S cmatrix man-db man-pages libmagick neovim --noconfirm
 
 echo "setting up AUR"
 git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
@@ -50,6 +53,10 @@ sudo pacman -S xorg xclip xorg-xinit xf86-video-intel qtile rofi --noconfirm
 cp ./wm/xorg/.xinitrc /home/simon/
 cp ./wm/xorg/.Xresources /home/simon/
 
+cp ./wm/qtile/config.py /home/simon/.config/qtile/
+
+#BOOT SETUP
+
 echo "setting up clean boot"
 sudo cp ./clean-boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
@@ -64,10 +71,21 @@ sudo cp ./clean-boot/20-quiet-printk.conf /etc/sysctl.d/
 sudo cp ./clean-boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 
-#BLUETOOTH SETUP
+sudo cp system.conf /etc/systemd/
+
+#AUDIO AND BLUETOOTH SETUP
 
 echo "setting up audio and  bluetooth"
 sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
+
+#CODING SETUP
+
+echo "installing programing languages and runtimes"
+sudo pacman -S nodejs npm python python-pip --noconfirm
+
+pip install youtube-dl
+
+cp ./wm/.bashrc /home/simon/
 
 echo "rebooting system..."
 sudo reboot
