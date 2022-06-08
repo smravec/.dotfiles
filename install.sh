@@ -44,11 +44,11 @@ echo "installing terminal emulator"
 yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
-sudo pacman -S krita vlc --noconfirm
+sudo pacman -S krita vlc shotcut --noconfirm
 yay -S visual-studio-code-bin --noconfirm
 
 echo "installing xorg and window manager"
-sudo pacman -S xorg xclip xorg-xinit xf86-video-intel qtile rofi --noconfirm
+sudo pacman -S xorg xclip xorg-xinit qtile rofi --noconfirm
 
 cp ./wm/xorg/.xinitrc /home/simon/
 cp ./wm/xorg/.Xresources /home/simon/
