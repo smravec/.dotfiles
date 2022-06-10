@@ -82,7 +82,6 @@ sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/system.conf /etc/syste
 #AUDIO AND BLUETOOTH SETUP
 
 echo "setting up audio and  bluetooth"
-# THIS LINE NEED FIXING
 sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
 
 sudp cp /home/simon/.framework-laptop-dotfiles/bluetooth/main.conf /etc/bluetooth/
@@ -99,4 +98,4 @@ pip install yt-dlp
 cp ./wm/.bashrc /home/simon/
 
 echo "rebooting system..."
-#sudo reboot
+sudo reboot
