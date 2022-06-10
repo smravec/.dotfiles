@@ -85,6 +85,9 @@ echo "setting up audio and  bluetooth"
 # THIS LINE NEED FIXING
 sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
 
+sudp cp /home/simon/.framework-laptop-dotfiles/bluetooth/main.conf /etc/bluetooth/
+sudo systemctl enable bluetooth.service
+
 #CODING SETUP
 
 echo "installing programing languages and runtimes"
