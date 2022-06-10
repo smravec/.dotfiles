@@ -50,17 +50,19 @@ sudo pacman -S krita vlc shotcut --noconfirm
 yay -S visual-studio-code-bin --noconfirm
 
 echo "installing xorg and window manager"
-sudo pacman -S xorg xclip xorg-xinit qtile rofi --noconfirm
+sudo pacman -S xorg xclip xorg-xinit qtile rofi picom --noconfirm
 
 cp /home/simon/.framework-laptop-dotfiles/wm/xorg/.xinitrc /home/simon/
 cp /home/simon/.framework-laptop-dotfiles/wm/xorg/.Xresources /home/simon/
 
 cp /home/simon/.framework-laptop-dotfiles/wm/qtile/config.py /home/simon/.config/qtile/
+cp /home/simon/.framework-laptop-dotfiles/wm/qtile/arch_bg.png /home/simon/Pictures/Wallpapers/
+
+cp /home/simon/.framework-laptop-dotfiles/wm/picom.conf /home/simon/.config/
 
 #BOOT SETUP
 
 echo "setting up clean boot"
-# THIS LINE NEEDS FIXING
 sudo mkdir /etc/systemd/system/getty@tty1.service.d
 sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
@@ -89,6 +91,7 @@ echo "installing programing languages and runtimes"
 sudo pacman -S nodejs npm python python-pip --noconfirm
 
 pip install youtube-dl
+pip install yt-dlp
 
 cp ./wm/.bashrc /home/simon/
 
