@@ -61,6 +61,7 @@ cp /home/simon/.framework-laptop-dotfiles/wm/qtile/config.py /home/simon/.config
 
 echo "setting up clean boot"
 # THIS LINE NEEDS FIXING
+sudo mkdir /etc/systemd/system/getty@tty1.service.d
 sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
 sudo rm /var/log/lastlog
@@ -74,8 +75,7 @@ sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/20-quiet-printk.conf /
 sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 
-# THIS LINE NEED FIXING
-sudo cp /home/simon/clean-boot/system.conf /etc/systemd/
+sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/system.conf /etc/systemd/
 
 #AUDIO AND BLUETOOTH SETUP
 
