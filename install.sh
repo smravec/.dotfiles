@@ -82,7 +82,7 @@ sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/system.conf /etc/syste
 #AUDIO AND BLUETOOTH SETUP
 
 echo "setting up audio and  bluetooth"
-sudo pacman -S blueman pavucontrol pulseaudio pulseaudio-bluetooth --noconfirm
+sudo pacman -S blueman pavucontrol pulseaudio alsa-utils pulseaudio-bluetooth --noconfirm
 
 sudp cp /home/simon/.framework-laptop-dotfiles/bluetooth/main.conf /etc/bluetooth/
 sudo systemctl enable bluetooth.service
