@@ -26,13 +26,6 @@ git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
 echo "installing packages from AUR"
 yay -Syu acpi feh kpcli --noconfirm
 
-echo "setting up grub"
-sudo cp  /home/simon/.framework-laptop-dotfiles/grub/grub /etc/default/grub
-sudo cp -r  /home/simon/.framework-laptop-dotfiles/grub/Framework-Variant1 /usr/share/grub/themes/
-
-# THIS LINE NEEDS FIXING
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
 echo "setting up git"
 git config --global user.name "simon"
 git config --global user.email "simon.mravec@gmail.com"
@@ -52,39 +45,34 @@ yay -S visual-studio-code-bin --noconfirm
 echo "installing xorg and window manager"
 sudo pacman -S xorg xclip xorg-xinit qtile rofi picom --noconfirm
 
-cp /home/simon/.framework-laptop-dotfiles/wm/xorg/.xinitrc /home/simon/
-cp /home/simon/.framework-laptop-dotfiles/wm/xorg/.Xresources /home/simon/
-
-cp /home/simon/.framework-laptop-dotfiles/wm/qtile/config.py /home/simon/.config/qtile/
-cp /home/simon/.framework-laptop-dotfiles/wm/qtile/arch_bg.png /home/simon/Pictures/Wallpapers/
-
-cp /home/simon/.framework-laptop-dotfiles/wm/picom.conf /home/simon/.config/
+cp ./base/xorg/.xinitrc ~/
+cp ./base/xorg/.Xresources ~/
 
 #BOOT SETUP
 
-echo "setting up clean boot"
+echo "setting up boot with plymouth"
 sudo mkdir /etc/systemd/system/getty@tty1.service.d
-sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
+sudo cp ./base/boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
 sudo rm /var/log/lastlog
 sudo touch /var/log/lastlog
 sudo chattr +i /var/log/lastlog
 
-cp /home/simon/.framework-laptop-dotfiles/clean-boot/.bash_profile /home/simon/
+cp ./base/boot/.bash_profile /home/simon/
 
-sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/20-quiet-printk.conf /etc/sysctl.d/
+sudo cp ./base/boot/20-quiet-printk.conf /etc/sysctl.d/
 
-sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/mkinitcpio.conf /etc/
+sudo cp ./base/boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 
-sudo cp /home/simon/.framework-laptop-dotfiles/clean-boot/system.conf /etc/systemd/
+sudo cp ./base/boot/system.conf /etc/systemd/
 
 #AUDIO AND BLUETOOTH SETUP
 
 echo "setting up audio and  bluetooth"
 sudo pacman -S blueman pavucontrol pulseaudio alsa-utils pulseaudio-bluetooth --noconfirm
 
-sudp cp /home/simon/.framework-laptop-dotfiles/bluetooth/main.conf /etc/bluetooth/
+sudp cp ./base/main.conf /etc/bluetooth/
 sudo systemctl enable bluetooth.service
 
 #CODING SETUP
@@ -95,7 +83,7 @@ sudo pacman -S nodejs npm python python-pip --noconfirm
 pip install youtube-dl
 pip install yt-dlp
 
-cp ./wm/.bashrc /home/simon/
+cp ./base/.bashrc /home/simon/
 
 echo "rebooting system..."
 sudo reboot
