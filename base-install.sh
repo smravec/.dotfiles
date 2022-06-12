@@ -33,7 +33,7 @@ git config --global user.email "simon.mravec@gmail.com"
 #WM AND XORG INSTALL
 
 echo "installing web browser"
-sudo pacman -S chromium --noconfirm
+sudo pacman -S chromium
 
 echo "installing terminal emulator"
 yay -S alacritty --noconfirm
@@ -51,6 +51,7 @@ cp ./base/xorg/.Xresources ~/
 #BOOT SETUP
 
 echo "setting up boot with plymouth"
+yay -S plymouth-git
 sudo mkdir /etc/systemd/system/getty@tty1.service.d
 sudo cp ./base/boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
@@ -84,6 +85,3 @@ pip install youtube-dl
 pip install yt-dlp
 
 cp ./base/.bashrc /home/simon/
-
-echo "rebooting system..."
-sudo reboot
