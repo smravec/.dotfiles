@@ -39,7 +39,7 @@ echo "installing terminal emulator"
 yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
-sudo pacman -S krita vlc shotcut --noconfirm
+sudo pacman -S krita vlc shotcut audacity --noconfirm
 yay -S visual-studio-code-bin --noconfirm
 
 echo "installing xorg and window manager"
