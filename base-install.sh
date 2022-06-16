@@ -39,7 +39,7 @@ echo "installing terminal emulator"
 yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
-sudo pacman -S krita vlc shotcut audacity --noconfirm
+sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
 yay -S visual-studio-code-bin --noconfirm
 
 echo "installing xorg and window manager"
@@ -50,8 +50,7 @@ cp ./base/xorg/.Xresources ~/
 
 #BOOT SETUP
 
-echo "setting up boot with plymouth"
-yay -S plymouth-git
+echo "setting up clean boot"
 sudo mkdir /etc/systemd/system/getty@tty1.service.d
 sudo cp ./base/boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 

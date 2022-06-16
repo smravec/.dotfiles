@@ -69,8 +69,11 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+
+    # Custom keybinds
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r",lazy.spawn("rofi -show run"), desc="Spawns rofi"),
+    Key([mod], "b",lazy.spawn("chromium")),
 ]
 
 groups = [Group(i) for i in "12345"]
@@ -118,39 +121,29 @@ layouts = [
 widget_defaults = dict(
     font="sans",
     fontsize=32,
-    padding=8,
+    padding=10,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Spacer(),
+                widget.Clock(format="%d/%m %a %H:%M"),
+                widget.Battery(format="{percent:2.0%}"),
+            
             ],
             24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            border_width=[15, 0, 15, 0],  # Draw top and bottom borders
+            #border_color=["000000", "000000", "000000", "000000"]  # Borders are magenta
         ),
         wallpaper="~/Pictures/Wallpapers/arch_bg.png",
     ),
 ]
 
-# Drag floating layouts.
+#Drag floating layouts.
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
