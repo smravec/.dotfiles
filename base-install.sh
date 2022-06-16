@@ -17,7 +17,7 @@ echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
 
 echo "installing packages"
-sudo pacman -S cmatrix man-db man-pages libmagick neovim --noconfirm
+sudo pacman -S man-db man-pages libmagick neovim --noconfirm
 
 echo "setting up AUR"
 git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
@@ -60,8 +60,6 @@ sudo chattr +i /var/log/lastlog
 
 cp ./base/boot/.bash_profile /home/simon/
 
-sudo cp ./base/boot/20-quiet-printk.conf /etc/sysctl.d/
-
 sudo cp ./base/boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 
@@ -84,3 +82,5 @@ pip install youtube-dl
 pip install yt-dlp
 
 cp ./base/.bashrc /home/simon/
+
+echo "done"
