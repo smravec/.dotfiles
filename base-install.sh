@@ -2,19 +2,11 @@
 
 #BASE INSTALL
 
-echo "creating base home dirs"
-mkdir /home/simon/Downloads
-mkdir /home/simon/Notes
-mkdir /home/simon/Music
-mkdir /home/simon/Videos
-mkdir /home/simon/Code
-mkdir /home/simon/Code/Bash-Scripts
-mkdir /home/simon/Pictures
-mkdir /home/simon/Pictures/Wallpapers
-mkdir /home/simon/School
-
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
+
+echo "installing shell"
+sudo pacman -S fish --noconfirm
 
 echo "installing packages"
 sudo pacman -S man-db man-pages libmagick neovim --noconfirm
