@@ -60,6 +60,8 @@ sudo chattr +i /var/log/lastlog
 
 cp ./base/boot/.bash_profile /home/simon/
 
+sudo cp ./base/boot/arch.conf /boot/loader/entries/
+
 sudo cp ./base/boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 

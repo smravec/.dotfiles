@@ -2,6 +2,7 @@
 echo "setting up plymouth"
 yay -S plymouth-git --noconfirm
 
+sudo plymouth-set-default-theme bgrt -R
 
 # WINDOW MANAGER RICE
 echo "ricing window manager"
