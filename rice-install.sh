@@ -1,3 +1,10 @@
+# RICING SCRIPT
+# This script assumes you ran the base-install.sh
+
+#TODO
+#1 Setup mpd and mpc
+#2 Setup bluetooth via cli
+
 # SHELL
 echo "ricing fish shell"
 yay -S nerd-fonts-fira-code --noconfirm
@@ -21,8 +28,8 @@ cp ./rice/window-manager/arch_bg.png ~/Pictures/Wallpapers/
 
 cp ./rice/window-manager/picom.conf ~/.config/
 
-# COSMETIC CLI PROGRAMS
-echo "installing cosmetic cli programs"
+# CLI PROGRAMS
+echo "installing cli programs"
 yay -S cava pfetch --noconfirm
 
 sudo pacman -S cmatrix --noconfirm
