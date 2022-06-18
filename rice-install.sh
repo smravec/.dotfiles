@@ -30,9 +30,8 @@ cp ./rice/window-manager/picom.conf ~/.config/
 
 # CLI PROGRAMS
 echo "installing cli programs"
-yay -S cava pfetch --noconfirm
+yay -S cava pfetch vtop --noconfirm
 
 sudo pacman -S cmatrix --noconfirm
-
 
 echo "done"
