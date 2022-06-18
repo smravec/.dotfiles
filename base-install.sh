@@ -32,7 +32,7 @@ yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
-yay -S visual-studio-code-bin --noconfirm
+yay -S vscodium-bin --noconfirm
 
 echo "installing xorg and window manager"
 sudo pacman -S xorg xclip xorg-xinit qtile rofi picom --noconfirm
