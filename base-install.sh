@@ -22,6 +22,9 @@ echo "setting up git"
 git config --global user.name "simon"
 git config --global user.email "simon.mravec@gmail.com"
 
+echo "installing drivers"
+sudo pacman -S intel-media-driver
+
 #WM AND XORG INSTALL
 
 echo "installing web browser"
