@@ -25,14 +25,14 @@ git config --global user.email "simon.mravec@gmail.com"
 #WM AND XORG INSTALL
 
 echo "installing web browser"
-sudo pacman -S chromium
+sudo pacman -S firefox
 
 echo "installing terminal emulator"
 yay -S alacritty --noconfirm
 
 echo "installing other gui programs"
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
-yay -S vscodium-bin --noconfirm
+yay -S vscodium-bin unityhub --noconfirm
 
 echo "installing xorg and window manager"
 sudo pacman -S xorg xclip xorg-xinit qtile rofi picom --noconfirm
