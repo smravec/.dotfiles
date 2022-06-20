@@ -4,6 +4,7 @@
 #TODO
 #1 Setup mpd and mpc
 #2 Setup bluetooth via cli
+#3 Make a script to update dotfiles
 
 # SHELL
 echo "ricing fish shell"
