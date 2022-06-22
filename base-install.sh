@@ -21,6 +21,7 @@ yay -Syu acpi feh kpcli --noconfirm
 echo "setting up git"
 git config --global user.name "simon"
 git config --global user.email "simon.mravec@gmail.com"
+git config --global pull.rebase false
 
 echo "installing drivers"
 sudo pacman -S intel-media-driver
