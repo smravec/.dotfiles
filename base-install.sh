@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #BASE INSTALL
+#MADE FOR FRAMEWORK LAPTOP MAY NOT WORK ON OTHER HARDWARE
 
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
@@ -25,6 +26,10 @@ git config --global pull.rebase false
 
 echo "installing drivers"
 sudo pacman -S intel-media-driver
+
+echo "setting up vim"
+#copy vim config
+vim -c "BundleInstall!"
 
 #WM AND XORG INSTALL
 
