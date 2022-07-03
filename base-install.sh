@@ -30,6 +30,7 @@ sudo pacman -S intel-media-driver
 echo "setting up vim"
 #copy vim config
 vim -c "BundleInstall!"
+vim -c "q!"
 
 #WM AND XORG INSTALL
 
