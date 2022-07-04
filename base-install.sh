@@ -5,7 +5,7 @@
 
 #WHICH SHELL TO USE
 #OPTIONS: "bash","fish"
-UsedShell="bash"
+UsedShell="fish"
 
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
@@ -69,6 +69,7 @@ sudo mkinitcpio -p linux
 sudo cp ./base/boot/system.conf /etc/systemd/
 
 #SHELL SETUP
+
 if [ $UsedShell == "bash"  ]
 then
 	echo "setting up bash"
@@ -81,6 +82,7 @@ then
 	echo "installling and setting up fish"
 	sudo pacman -S fish --noconfirm
 	cp ./base/config.fish /home/simon/.config/fish/
+	sudo chsh -s $(which fish) simon
 fi
 
 
