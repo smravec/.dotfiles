@@ -3,11 +3,12 @@
 #BASE INSTALL
 #MADE FOR FRAMEWORK LAPTOP MAY NOT WORK ON OTHER HARDWARE
 
+#WHICH SHELL TO USE
+#OPTIONS: "bash","fish"
+UsedShell="bash"
+
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
-
-echo "installing shell"
-sudo pacman -S fish --noconfirm
 
 echo "installing packages"
 sudo pacman -S man-db man-pages libmagick neovim --noconfirm
@@ -28,7 +29,7 @@ echo "installing drivers"
 sudo pacman -S intel-media-driver
 
 echo "setting up vim"
-#copy vim config
+cp ./base/.vimrc /home/simon/
 vim -c "BundleInstall!"
 vim -c "q!"
 
@@ -60,14 +61,29 @@ sudo rm /var/log/lastlog
 sudo touch /var/log/lastlog
 sudo chattr +i /var/log/lastlog
 
-cp ./base/boot/.bash_profile /home/simon/
-
 sudo cp ./base/boot/arch.conf /boot/loader/entries/
 
 sudo cp ./base/boot/mkinitcpio.conf /etc/
 sudo mkinitcpio -p linux
 
 sudo cp ./base/boot/system.conf /etc/systemd/
+
+#SHELL SETUP
+if [ $UsedShell == "bash"  ]
+then
+	echo "setting up bash"
+	cp ./base/.bashrc /home/simon/
+	cp ./base/boot/.bash_profile /home/simon/
+fi
+
+#NEEDS FIXING LATER
+if [ $UsedShell == "fish" ]
+then
+	echo "installling and setting up fish"
+	sudo pacman -S fish --noconfirm
+	cp ./base/config.fish /home/simon/.config/fish/
+fi
+
 
 #AUDIO AND BLUETOOTH SETUP
 
@@ -84,7 +100,5 @@ sudo pacman -S nodejs npm python python-pip --noconfirm
 
 pip install youtube-dl
 pip install yt-dlp
-
-cp ./base/.bashrc /home/simon/
 
 echo "done"
