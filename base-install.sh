@@ -76,7 +76,6 @@ then
 	cp ./base/boot/.bash_profile /home/simon/
 fi
 
-#NEEDS FIXING LATER
 if [ $UsedShell == "fish" ]
 then
 	echo "installling and setting up fish"

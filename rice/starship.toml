@@ -1,0 +1,44 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[character]
+success_symbol = "❯"
+error_symbol = "❯"
+
+[package]
+disabled = true
+
+[username]
+style_user = "bright-blue bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname](bold bright-white) "
+disabled = false
+
+[directory]
+home_symbol = "~"
+read_only = ""
+style = "italic bold white"
+
+[git_branch]
+disabled = false
+format = "in [$symbol$branch(:$remote_branch)]($style) "
+style = "bold bright-white"
+
+[git_status]
+style = "bold bright-bright-white"
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[battery]
+disabled = true
