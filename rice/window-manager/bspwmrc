@@ -1,0 +1,75 @@
+#! /bin/sh
+
+#KEYBINDS
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+#BAR
+polybar &
+
+#RANDOM FIXES
+
+#Cross cursor fix
+xsetroot -cursor_name left_ptr &
+
+#Autofocusing on browsers fix
+bspc config ignore_ewmh_focus true
+
+#SPAWN APPS AT STARTUP
+
+#HOME
+
+alacritty -o 'colors.cursor.cursor="#24283b"' -o 'font.size=14' -o 'cursor.style.shape=Beam' --class Status,Status --hold -e /home/simon/Code/Scripts/startup-status &
+bspc rule -a Status  state=floating rectangle=700x450+778+500 desktop=1 focus=on
+
+alacritty --class Todo,Todo --hold -e echo -n "here will be minor tasks" &
+bspc rule -a Todo state=floating rectangle=500x900+20+302 desktop=1
+
+alacritty --class Projects,Projects --hold -e echo -n "here will be major projects" &
+bspc rule -a Projects state=floating rectangle=500x900+1736+302 desktop=1
+
+#alacritty --class Animation,Animation --hold -e cava &
+#bspc rule -a Animation state=floating rectangle=800x300+500+1000 desktop=1
+
+#TERMINAL
+
+alacritty --class Terminal,Terminal &
+bspc rule -a Terminal state=tiled desktop=2
+
+#CODING
+
+alacritty --class Coding,Coding &
+bspc rule -a Coding state=tiled desktop=3 border=off
+
+#BROWSER
+
+firefox &
+bspc rule -a firefox state=tiled desktop=4 border=off
+
+#MUSIC
+
+#mpd stuff
+
+#SIGNAL
+
+#signal stuff
+
+#WORKSPACES
+bspc monitor -d 1 2 3 4 5 6
+
+bspc config border_width         2
+bspc config window_gap			12
+bspc config focused_border_color "#5a6496"
+bspc config normal_border_color "#2c314a"   
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+
+

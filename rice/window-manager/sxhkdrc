@@ -1,0 +1,104 @@
+
+#Reload keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#Open apps shortcuts
+
+#Launch Alacritty ( terminal emulator )
+super + Return
+	alacritty
+
+#Launch Rofi ( application launcher )
+super + r
+	rofi -show run
+
+#Function Keys
+
+#Toggle between us and sk keyboard layout
+@F12
+	/home/simon/Code/Scripts/SystemUtils.fish keyboard
+
+#Take screenshot
+@F11
+	/home/simon/Code/Scripts/SystemUtils.fish screenshot
+
+#@F10 #Turn on airplane mode ( turn wifi off )
+#script here
+
+#@F9 #Launch some gui for external monitors or connect to specific monitor
+#script here
+
+#Increase brightness
+@F8
+	/home/simon/Code/Scripts/SystemUtils.fish brightness +10%
+
+#Decrease brightness
+@F7
+	/home/simon/Code/Scripts/SystemUtils.fish brightness 10%-
+
+#Forward a song ( in x music player )
+#F6
+#script here 
+
+#Pause/resume current song ( playing in x music player )
+#F5
+#script here
+
+#Back a song ( in x music player )
+#@F4 
+#script here
+
+#Increase volume
+#@F3
+#script here
+
+#Decrease volume
+#@F2
+#script here
+
+#Mute/unmute volume
+#@F1
+#script here
+
+#Bspwm shortcuts
+
+#General
+
+#Change workspace
+super + {1-6}
+	bspc desktop -f '^{1-6}'
+
+#Reboot bspwm
+super + shift + r
+	bspc quit
+
+#Window manipulation
+
+#Close window
+super + q
+	bspc node -{c,k}
+
+#Expand window
+super + {h,j,k,l}
+	bspc node -z {left -60 0,top 0 -60,bottom 0 60,right 60 0}
+
+#Shrink window
+super + shift  + {h,j,k,l}
+	bspc node -z {left 60 0,top 0 60,bottom 0 -60,right -60 0}
+
+#Move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#Set the window state
+super + {a,s,d}
+	bspc node -t {tiled,floating,fullscreen}
+
+#Change focus to next window
+super + f
+	bspc node -f next.local.window
+
+#Send window to different workspace
+super + shift + {1-6}
+	bspc node -d '^{1-6}'

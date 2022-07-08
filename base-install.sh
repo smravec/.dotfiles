@@ -28,10 +28,13 @@ git config --global pull.rebase false
 echo "installing drivers"
 sudo pacman -S intel-media-driver
 
-echo "setting up vim"
-cp ./base/.vimrc /home/simon/
-vim -c "BundleInstall!"
-vim -c "q!"
+#echo "setting up vim"
+#cp ./base/.vimrc /home/simon/
+#mkdir -p ~/.vim/bundle
+
+#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+#vim -c "BundleInstall!"
 
 #WM AND XORG INSTALL
 
@@ -45,8 +48,8 @@ echo "installing other gui programs"
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
 yay -S vscodium-bin unityhub --noconfirm
 
-echo "installing xorg and window manager"
-sudo pacman -S xorg xclip xorg-xinit qtile rofi picom --noconfirm
+echo "installing xorg"
+sudo pacman -S xorg xclip xorg-xinit  rofi picom --noconfirm
 
 cp ./base/xorg/.xinitrc ~/
 cp ./base/xorg/.Xresources ~/
@@ -54,6 +57,8 @@ cp ./base/xorg/.Xresources ~/
 #BOOT SETUP
 
 echo "setting up clean boot"
+yay -S plymouth-git --noconfirm
+
 sudo mkdir /etc/systemd/system/getty@tty1.service.d
 sudo cp ./base/boot/autologin.conf /etc/systemd/system/getty@tty1.service.d/
 
@@ -88,11 +93,11 @@ fi
 
 #AUDIO AND BLUETOOTH SETUP
 
-echo "setting up audio and  bluetooth"
-sudo pacman -S blueman pavucontrol pulseaudio alsa-utils pulseaudio-bluetooth --noconfirm
+#echo "setting up audio and  bluetooth"
+#sudo pacman -S blueman pavucontrol pulseaudio alsa-utils pulseaudio-bluetooth --noconfirm
 
-sudp cp ./base/main.conf /etc/bluetooth/
-sudo systemctl enable bluetooth.service
+#sudp cp ./base/main.conf /etc/bluetooth/
+#sudo systemctl enable bluetooth.service
 
 #CODING SETUP
 
