@@ -192,9 +192,20 @@ font:
 colors:
   # Default colors
   primary:
-    background: "#24283b" #'0x1a1b26' #'0x24283b'
-    foreground: '#a9b1d6'
+    background: "#24283b"
+    foreground: '#8faae3'
 
+  normal:
+      black:   "#24283b"
+      red:     "#6df7a7" 
+      green:   '#2eceff'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta:  "#b5f0ff"  #"#70c5ff"   #"#36aeff"
+      cyan:   "#1fd2ff" #"#42cdff"
+      white:   "#8faae3" #'0x787c99'
+
+                                                        #
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not
