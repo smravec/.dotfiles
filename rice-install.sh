@@ -14,10 +14,17 @@ cp ./rice/xorg/.xinitrc ~/
 cp ./rice/xorg/.Xresources ~/
 
 echo "installing and setting up window manager"
-sudo pacman -S bspwm sxhkd --no-confirm
+sudo pacman -S bspwm sxhkd picom --noconfirm
 
+cp ./rice/window-manager/bspwmrc ~/.config/bspwm/
+cp ./rice/window-manager/sxhkdrc ~/.config/sxhkd/
+cp ./rice/picom.conf ~/.config/
 
+echo"installing and setting up application launcher"
+sudo pacman -S rofi --noconfirm
 
+mkdir ~/.config/rofi
+cp ./rice/window-manager/config.rasi
 
 echo "installing fonts"
 yay -S nerd-fonts-fira-code --noconfirm
@@ -27,8 +34,17 @@ sudo pacman -S starship --noconfirm
 
 cp ./rice/starship.toml ~/.config/
 
+#GUI APPS
+echo "installing gui apps"
+sudo pacman -S firefox
+sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
+
+yay -S vscodium-bin
+
 # ALACRITTY
-echo "ricing alacritty"
+echo "installing and ricing alacritty"
+sudo pacman -S alacritty --noconfirm
+
 cp ./rice/alacritty.yml ~/
 
 # PLYMOUTH
@@ -36,13 +52,6 @@ echo "setting up plymouth"
 sudo plymouth-set-default-theme bgrt -R
 
 sudo mkinitcpio -p linux
-
-# WINDOW MANAGER RICE
-echo "ricing window manager"
-cp ./rice/window-manager/config.py ~/.config/qtile/
-cp ./rice/window-manager/space.png ~/.config/qtile/
-
-cp ./rice/window-manager/picom.conf ~/.config/
 
 # CLI PROGRAMS
 echo "installing cli programs"

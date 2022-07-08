@@ -3,10 +3,6 @@
 #BASE INSTALL
 #MADE FOR FRAMEWORK LAPTOP MAY NOT WORK ON OTHER HARDWARE
 
-#WHICH SHELL TO USE
-#OPTIONS: "bash","fish"
-UsedShell="fish"
-
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
 
@@ -36,24 +32,6 @@ sudo pacman -S intel-media-driver
 
 #vim -c "BundleInstall!"
 
-#WM AND XORG INSTALL
-
-echo "installing web browser"
-sudo pacman -S firefox
-
-echo "installing terminal emulator"
-yay -S alacritty --noconfirm
-
-echo "installing other gui programs"
-sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
-yay -S vscodium-bin unityhub --noconfirm
-
-echo "installing xorg"
-sudo pacman -S xorg xclip xorg-xinit  rofi picom --noconfirm
-
-cp ./base/xorg/.xinitrc ~/
-cp ./base/xorg/.Xresources ~/
-
 #BOOT SETUP
 
 echo "setting up clean boot"
@@ -75,21 +53,12 @@ sudo cp ./base/boot/system.conf /etc/systemd/
 
 #SHELL SETUP
 
-if [ $UsedShell == "bash"  ]
-then
-	echo "setting up bash"
-	cp ./base/.bashrc /home/simon/
-	cp ./base/boot/.bash_profile /home/simon/
-fi
+echo "installling and setting up fish"
+sudo pacman -S fish --noconfirm
 
-if [ $UsedShell == "fish" ]
-then
-	echo "installling and setting up fish"
-	sudo pacman -S fish --noconfirm
-	cp ./base/config.fish /home/simon/.config/fish/
-	sudo chsh -s $(which fish) simon
-fi
+cp ./base/config.fish /home/simon/.config/fish/
 
+sudo chsh -s $(which fish) simon
 
 #AUDIO AND BLUETOOTH SETUP
 
