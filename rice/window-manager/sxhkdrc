@@ -17,11 +17,11 @@ super + r
 
 #Toggle between us and sk keyboard layout
 @F12
-	/home/simon/Code/Scripts/SystemUtils.fish keyboard
+	/home/simon/Code/Scripts/SystemUtils keyboard
 
 #Take screenshot
 @F11
-	/home/simon/Code/Scripts/SystemUtils.fish screenshot
+	/home/simon/Code/Scripts/SystemUtils screenshot
 
 #@F10 #Turn on airplane mode ( turn wifi off )
 #script here
@@ -31,11 +31,11 @@ super + r
 
 #Increase brightness
 @F8
-	/home/simon/Code/Scripts/SystemUtils.fish brightness +10%
+	/home/simon/Code/Scripts/SystemUtils brightness +10%
 
 #Decrease brightness
 @F7
-	/home/simon/Code/Scripts/SystemUtils.fish brightness 10%-
+	/home/simon/Code/Scripts/SystemUtils brightness 10%-
 
 #Forward a song ( in x music player )
 #F6

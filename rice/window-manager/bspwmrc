@@ -18,14 +18,14 @@ bspc config ignore_ewmh_focus true
 
 #HOME
 
-alacritty -o 'colors.cursor.cursor="#24283b"' -o 'font.size=14' -o 'cursor.style.shape=Beam' --class Status,Status --hold -e /home/simon/Code/Scripts/startup-status &
-bspc rule -a Status  state=floating rectangle=700x450+778+500 desktop=1 focus=on
-
 alacritty --class Todo,Todo --hold -e echo -n "here will be minor tasks" &
-bspc rule -a Todo state=floating rectangle=500x900+20+302 desktop=1
+bspc rule -a Todo state=floating rectangle=500x900+20+302 desktop=1 border=off
 
 alacritty --class Projects,Projects --hold -e echo -n "here will be major projects" &
-bspc rule -a Projects state=floating rectangle=500x900+1736+302 desktop=1
+bspc rule -a Projects state=floating rectangle=500x900+1736+302 desktop=1 border=off
+
+alacritty -o 'colors.cursor.cursor="#24283b"' -o 'font.size=14' -o 'cursor.style.shape=Beam' --class Status,Status --hold -e echo -e "\n"; pfetch &
+bspc rule -a Status  state=floating rectangle=700x450+778+400 desktop=1 border=off #focus=on
 
 #alacritty --class Animation,Animation --hold -e cava &
 #bspc rule -a Animation state=floating rectangle=800x300+500+1000 desktop=1

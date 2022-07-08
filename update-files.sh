@@ -35,6 +35,6 @@ cp $Home".config/polybar/config.ini" ./rice/window-manager/
 cp $Home".Xresources" ./rice/xorg/
 cp $Home".xinitrc" ./rice/xorg/
 #scripts ( other fish/bash scripts I use)
-#cp
+cp ~/Code/Scripts/SystemUtils ./rice/
 
 echo "done"

@@ -23,7 +23,7 @@ end
 #Example: "./SystemUtils.fish copy"
 
 if [ $argv[1] = "copy" ] 
-	set token "" #Token you want to copy to clipboard
+	set token "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" #Token you want to copy to clipboard
 	echo -n  $token | xclip -selection clipboard
 end
 
@@ -66,3 +66,20 @@ end
 if [ $argv[1] = "keyboard" ]
 	setxkbmap sk
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

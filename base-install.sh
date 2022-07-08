@@ -22,7 +22,7 @@ git config --global user.email "simon.mravec@gmail.com"
 git config --global pull.rebase false
 
 echo "installing drivers"
-sudo pacman -S intel-media-driver
+sudo pacman -S intel-media-driver --noconfirm
 
 #echo "setting up vim"
 #cp ./base/.vimrc /home/simon/
