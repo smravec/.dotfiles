@@ -30,6 +30,11 @@ cp ./rice/window-manager/config.rasi ~/.config/rofi/
 echo "installing fonts"
 yay -S nerd-fonts-fira-code --noconfirm
 
+echo "installing and setting up polybar"
+
+mkdir ~/.config/polybar
+cp ./rice/config.ini ~/.config/polybar/
+
 echo "installing and setting up custom prompt"
 sudo pacman -S starship --noconfirm
 
