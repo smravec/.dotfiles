@@ -4,8 +4,9 @@
 
 #TODO
 #1 Setup mpd and mpc
-#2 Setup bluetooth via cli
-#3 Make a script to update dotfiles
+#2 Setup bluetooth via cli (easy with arch wiki)
+#3 Make a script to update dotfiles (done)
+#$ Setup neovim
 
 echo "installing xorg and setting up xorg"
 sudo pacman -S xorg xclip xorg-xinit --no-confirm
@@ -34,30 +35,32 @@ sudo pacman -S starship --noconfirm
 
 cp ./rice/starship.toml ~/.config/
 
-#GUI APPS
 echo "installing gui apps"
 sudo pacman -S firefox
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
 
 yay -S vscodium-bin
 
-# ALACRITTY
 echo "installing and ricing alacritty"
 sudo pacman -S alacritty --noconfirm
 
 mkdir ~/.config/alacritty
 cp ./rice/alacritty.yml ~/.config/alacritty/
 
-# PLYMOUTH
 echo "setting up plymouth"
 sudo plymouth-set-default-theme bgrt -R
 
 sudo mkinitcpio -p linux
 
-# CLI PROGRAMS
 echo "installing cli programs"
 yay -S cava pfetch oneko cbonsai pipes.sh --noconfirm
 
 sudo pacman -S cmatrix gtop pv --noconfirm
+
+echo "setting up custom scripts"
+
+mkdir ~/Code
+mkdir ~/Code/Scripts
+cp ./rice/SystemUtils ~/Code/Scripts
 
 echo "done"
