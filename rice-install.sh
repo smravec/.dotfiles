@@ -24,7 +24,7 @@ echo"installing and setting up application launcher"
 sudo pacman -S rofi --noconfirm
 
 mkdir ~/.config/rofi
-cp ./rice/window-manager/config.rasi
+cp ./rice/window-manager/config.rasi ~/.config/rofi/
 
 echo "installing fonts"
 yay -S nerd-fonts-fira-code --noconfirm
@@ -45,7 +45,8 @@ yay -S vscodium-bin
 echo "installing and ricing alacritty"
 sudo pacman -S alacritty --noconfirm
 
-cp ./rice/alacritty.yml ~/
+mkdir ~/.config/alacritty
+cp ./rice/alacritty.yml ~/.config/alacritty/
 
 # PLYMOUTH
 echo "setting up plymouth"
@@ -55,8 +56,8 @@ sudo mkinitcpio -p linux
 
 # CLI PROGRAMS
 echo "installing cli programs"
-yay -S cava pfetch pipes.sh --noconfirm
+yay -S cava pfetch oneko cbonsai pipes.sh --noconfirm
 
-sudo pacman -S cmatrix gtop --noconfirm
+sudo pacman -S cmatrix gtop pv --noconfirm
 
 echo "done"
