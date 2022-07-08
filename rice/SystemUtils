@@ -1,0 +1,68 @@
+#!/usr/bin/fish
+
+#Basic system utils
+#Collection of fish scripts to control your system
+
+set input (string split "" $argv[2])
+
+#BRIGHTNESS
+#Change backlight brightness of screen
+#Usage: "SystemUtils.fish brightness Percentage"
+#Example 1: "./SystemUtils.fish brightness  +10%"
+#Example 2: "./SystemUtils.fish brightness 10%-"
+
+if [ $argv[1] = "brightness" ]
+	if [ (brightnessctl g) -gt 9600 ]; or [ $input[1]  = "+" ]
+		brightnessctl s $argv[2]
+	end
+end
+
+#COPY TO CLIPBOARD
+#Copy any token you want to clipboard
+#Usage: "SystemUtils.fish copy"
+#Example: "./SystemUtils.fish copy"
+
+if [ $argv[1] = "copy" ] 
+	set token "" #Token you want to copy to clipboard
+	echo -n  $token | xclip -selection clipboard
+end
+
+#VOLUME
+#Change or mute volume
+#Usage: "SystemUtils.fish volume NumberNegativeOrPostiveOrMute"
+#Example 1: "./SystemUtils.fish volume mute"
+#Example 2: "./SystemUtils.fish volume  1.0"
+#Example 3: "./SystemUtils.fish volume -1.0"
+
+if [ $argv[1] = "volume" ]
+	if [ $argv[2] = "mute" ]
+		#set volume to 0 or restore it to previous state
+	else
+		#increase or decrease volume
+	end
+end
+
+#SCREENSHOT
+#Take a screenshot and saves it in specified path
+#Usage: "SystemUtils.fish screenshot"
+#Example: "SystemUtils.fish screenshot"
+
+if [ $argv[1] = "screenshot" ]
+	set path "~/Pictures/Screenshots"
+end
+
+#MUSIC
+#Manage [music player of choice] 
+#
+#
+if [ $argv[1] = "music" ]
+
+end
+
+#KEYBOARD LAYOUT
+#Toggle between any 2 keyboard layouts
+#Usage:
+
+if [ $argv[1] = "keyboard" ]
+	setxkbmap sk
+end
