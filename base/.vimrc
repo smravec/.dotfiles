@@ -9,12 +9,12 @@ set ruler
 set smarttab
 
 set nocompatible
-filetype off
+#filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+#set rtp+=~/.vim/bundle/vundle/
+#call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'dag/vim-fish'
+#Bundle 'gmarik/vundle'
+#Bundle 'dag/vim-fish'
 
-filetype plugin indent on
+#filetype plugin indent on

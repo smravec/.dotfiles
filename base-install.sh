@@ -24,13 +24,8 @@ git config --global pull.rebase false
 echo "installing drivers"
 sudo pacman -S intel-media-driver --noconfirm
 
-#echo "setting up vim"
-#cp ./base/.vimrc /home/simon/
-#mkdir -p ~/.vim/bundle
-
-#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
-#vim -c "BundleInstall!"
+echo "setting up vim"
+cp ./base/.vimrc /home/simon/
 
 #BOOT SETUP
 
@@ -56,9 +51,9 @@ sudo cp ./base/boot/system.conf /etc/systemd/
 echo "installling and setting up fish"
 sudo pacman -S fish --noconfirm
 
-cp ./base/config.fish /home/simon/.config/fish/
-
 sudo chsh -s $(which fish) simon
+
+cp ./base/config.fish ~/.config/fish/
 
 #AUDIO AND BLUETOOTH SETUP
 
