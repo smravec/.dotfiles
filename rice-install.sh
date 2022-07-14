@@ -51,7 +51,7 @@ echo "installing gui apps"
 sudo pacman -S firefox --noconfirm
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
 
-yay -S vscodium-bin --noconfirm
+yay -S vscodium-bin signal-desktop --noconfirm
 
 echo "installing and ricing alacritty"
 sudo pacman -S alacritty --noconfirm
@@ -76,10 +76,11 @@ sudo pacman -S cmatrix gtop pv --noconfirm
 
 echo "setting up custom scripts"
 
-yay -S brightnessctl --noconfirm
-
 mkdir ~/Code
 mkdir ~/Code/Scripts
 cp ./rice/SystemUtils ~/Code/Scripts
+
+echo "installing dependencies for custom scripts"
+yay -S brightnessctl --noconfirm
 
 echo "done"
