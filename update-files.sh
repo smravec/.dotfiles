@@ -17,8 +17,6 @@ cp $Home".config/bspwm/bspwmrc" ./rice/window-manager/
 cp $Home".config/sxhkd/sxhkdrc" ./rice/window-manager/
 #firefox ( browser )
 #cp $Home
-#chromium ( browser )
-#cp $Home
 #picom ( compositor )
 cp $Home".config/picom.conf" ./rice/
 #starship ( prompt )
@@ -35,6 +33,7 @@ cp $Home".config/polybar/config.ini" ./rice/window-manager/
 cp $Home".Xresources" ./rice/xorg/
 cp $Home".xinitrc" ./rice/xorg/
 #scripts ( other fish/bash scripts I use)
-cp ~/Code/Scripts/SystemUtils ./rice/
+#UPDATE MANUALLY
+#cp ~/Code/Scripts/SystemUtils ./rice/
 
 echo "done"
