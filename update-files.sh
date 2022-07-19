@@ -10,7 +10,7 @@ cp $Home".config/alacritty/alacritty.yml" ./rice/
 #rofi ( application launcher )
 cp $Home".config/rofi/config.rasi" ./rice/window-manager/
 #fish ( shell )
-cp $Home".config/fish/config.fish" ./base
+cp $Home".config/fish/config.fish" ./base/
 #bspwm ( window manager )
 cp $Home".config/bspwm/bspwmrc" ./rice/window-manager/
 #sxhkd ( keybinds )

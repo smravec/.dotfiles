@@ -5,6 +5,14 @@
 
 echo "refreshing pacman"
 sudo pacman -Syu --noconfirm
+	
+echo "setting up reflector(refreshes pacman mirrors)"
+sudo pacman -S reflector --noconfirm
+
+sudo cp ./base/reflector.conf /etc/xdg/reflector/
+
+sudo systemctl enable reflector.service reflector.timer
+sudo systemctl start reflector.service reflector.timer
 
 echo "installing packages"
 sudo pacman -S man-db man-pages libmagick neovim --noconfirm
