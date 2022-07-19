@@ -25,6 +25,8 @@ cp $Home".config/starship.toml" ./rice/
 #cp $Home
 #polybar ( bar )
 cp $Home".config/polybar/config.ini" ./rice/window-manager/
+#vim ( text editor )
+cp $Home".vimrc" ./base/
 #neovim ( editor )
 #cp $Home
 #mpd ( music server )

@@ -26,11 +26,12 @@ cp ./rice/window-manager/bspwmrc ~/.config/bspwm/
 cp ./rice/window-manager/sxhkdrc ~/.config/sxhkd/
 cp ./rice/picom.conf ~/.config/
 
-echo"installing and setting up application launcher"
+echo "installing and setting up application launcher"
 sudo pacman -S rofi --noconfirm
 
 mkdir ~/.config/rofi
 cp ./rice/window-manager/config.rasi ~/.config/rofi/
+
 
 echo "installing fonts"
 yay -S nerd-fonts-fira-code nerd-fonts-jetbrains-mono --noconfirm
@@ -59,11 +60,6 @@ sudo pacman -S alacritty --noconfirm
 mkdir ~/.config/alacritty
 cp ./rice/alacritty.yml ~/.config/alacritty/
 
-echo "installing and ricing kitty"
-sudo pacman -S kitty --noconfirm
-
-mkdir ~/.config/kitty
-
 echo "setting up plymouth"
 sudo plymouth-set-default-theme bgrt -R
 
@@ -76,9 +72,9 @@ sudo pacman -S cmatrix gtop pv --noconfirm
 
 echo "setting up custom scripts"
 
-mkdir ~/Code
-mkdir ~/Code/Scripts
-cp ./rice/SystemUtils ~/Code/Scripts
+#mkdir ~/Code
+#mkdir ~/Code/Scripts
+#cp ./rice/SystemUtils ~/Code/Scripts
 
 echo "installing dependencies for custom scripts"
 yay -S brightnessctl --noconfirm
