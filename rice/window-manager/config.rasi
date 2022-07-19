@@ -1,0 +1,92 @@
+
+*{
+    normal-background: #1f202e;
+    normal-foreground: #a9b6f5;
+  	alternate-normal-background: #1f202e;
+    alternate-normal-foreground: #a9b6f5;
+    selected-normal-background: #a9b6f5 ;
+    selected-normal-foreground: #000000;
+}
+
+configuration{
+		modi: "drun";
+		lines: 5;
+		show-icons: true;
+    font: "JetBrainsMono Nerd Font 20";
+    terminal: "alacritty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: true;
+    hide-scrollbar: true;
+		display-drun: "";
+		display-dmenu: "";
+}
+
+window {
+    width: 25%;
+    height: 45%;
+    location: north west;
+    anchor: north west;
+    x-offset: 1px;        
+    y-offset: 73px;
+    border: none;
+		background-color: #1f202e;
+		border-color: #a9b6f5;
+}
+
+entry {
+    background-color: transparent;
+    text-color: #a9b6f5;
+    placeholder-color: #636b8f;
+    placeholder: "Search";
+    blink: true;
+		font: "JetBrainsMono Nerd Font 20";
+		margin: 10px 0px 0px 0px;
+}
+
+prompt {
+		font: "JetBrainsMono Nerd Font 34";
+		margin: 0px 25px 0px 0px;
+		padding: 0px 0px 0px 0px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+inputbar {
+    children: [prompt,entry];
+    padding: 2px;
+		margin: 10px 20px 20px 20px;
+		padding: 0px 20px 10px 160px;
+		expand: false;
+		border: 0px 0px 2px 0px;
+		border-color: #636b8f; 
+}
+
+listview {
+    background-color: #00000000;
+    dynamic: true;
+    spacing: 0px;
+    border: 0px;
+    padding: 0px;
+		margin: 0px 60px 0px 60px;
+		scrollbar: false;
+		width: 50px;
+		columns: 2;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 7px;
+    spacing: 5px;
+}
+
+element {
+    padding: 5px;
+		width: 20px;
+    background-color: #1A1B26;
+    text-color: #a9b6f5  ;
+		font: "JetBrainsMono Nerd Font 20";
+}

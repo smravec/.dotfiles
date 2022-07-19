@@ -6,10 +6,14 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 #BAR
 polybar &
 
+#CLIPBOARD MANAGER
+clipster -d &
+
 #RANDOM FIXES
 
 #Cross cursor fix
 xsetroot -cursor_name left_ptr &
+unclutter &
 
 #Autofocusing on browsers fix
 bspc config ignore_ewmh_focus true
@@ -18,14 +22,15 @@ bspc config ignore_ewmh_focus true
 
 #HOME
 
-alacritty --class Todo,Todo --hold -e echo -n "here will be minor tasks" &
+alacritty -o "window.padding.x=0" -o "window.opacity=0.5" --class Todo,Todo --hold -e tman tasks show &
 bspc rule -a Todo state=floating rectangle=500x900+20+302 desktop=1 border=off
 
-alacritty --class Projects,Projects --hold -e echo -n "here will be major projects" &
+alacritty -o "window.padding.x=0" -o "window.opacity=0.5" --class Projects,Projects --hold -e tman projects show &
 bspc rule -a Projects state=floating rectangle=500x900+1736+302 desktop=1 border=off
 
-alacritty -o 'colors.cursor.cursor="#24283b"' -o 'font.size=14' -o 'cursor.style.shape=Beam' --class Status,Status --hold -e ~/.config/bspwm/StatusWin.sh &
+alacritty -o 'colors.cursor.cursor="#24283b"' -o 'font.size=14' -o 'cursor.style.shape=Beam' -o "window.opacity=0.5" --class Status,Status --hold -e ~/.config/bspwm/StatusWin.sh &
 bspc rule -a Status  state=floating rectangle=700x450+778+400 desktop=1 border=off #focus=on
+
 
 #alacritty --class Animation,Animation --hold -e cava &
 #bspc rule -a Animation state=floating rectangle=800x300+500+1000 desktop=1
@@ -38,7 +43,7 @@ bspc rule -a Terminal state=tiled desktop=2
 #CODING
 
 alacritty --class Coding,Coding &
-bspc rule -a Coding state=tiled desktop=3 border=off
+bspc rule -a Coding state=tiled desktop=3
 
 #BROWSER
 
@@ -51,7 +56,8 @@ bspc rule -a firefox state=tiled desktop=4 border=off
 
 #SIGNAL
 
-#signal stuff
+signal-desktop &
+bspc rule -a Signal state=tiled desktop=6 border=off
 
 #WORKSPACES
 bspc monitor -d 1 2 3 4 5 6

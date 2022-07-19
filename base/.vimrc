@@ -1,4 +1,3 @@
-
 filetype plugin on
 
 syntax on
@@ -7,14 +6,5 @@ set ts=2 sw=2
 set showmatch
 set ruler
 set smarttab
-
-set nocompatible
-#filetype off
-
-#set rtp+=~/.vim/bundle/vundle/
-#call vundle#rc()
-
-#Bundle 'gmarik/vundle'
-#Bundle 'dag/vim-fish'
-
-#filetype plugin indent on
+highlight Visual ctermfg=Black 
+highlight MatchParen  ctermfg=Black ctermbg=White

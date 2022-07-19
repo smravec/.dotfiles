@@ -14,6 +14,10 @@ sudo pacman -S xorg xclip xorg-xinit --noconfirm
 cp ./rice/xorg/.xinitrc ~/
 cp ./rice/xorg/.Xresources ~/
 
+echo "turn off beep at shutdown"
+touch /home/simon/.xprofile
+echo "xset -b" >> /home/simon/.xprofile
+
 echo "installing and setting up window manager"
 sudo pacman -S bspwm sxhkd picom --noconfirm
 

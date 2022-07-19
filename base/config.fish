@@ -2,6 +2,7 @@ set -U -x fish_greeting ""
 set -U -x SXHKD_SHELL /usr/bin/bash
 set -U -x SXHKD_SHELL sh
 set -U -x custom_cursor_colors true
+set -U -x LANG C.UTF-8 
 
 if status is-interactive
     # Commands to run in interactive sessions can go here

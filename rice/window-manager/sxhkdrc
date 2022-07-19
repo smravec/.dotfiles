@@ -7,11 +7,20 @@ super + Escape
 
 #Launch Alacritty ( terminal emulator )
 super + Return
-	alacritty
+	alacritty 
 
 #Launch Rofi ( application launcher )
 super + r
-	rofi -show run
+	rofi -show drun
+
+#Launch Clipboard manager
+super + c
+	/home/simon/Code/Scripts/clippy.py
+
+
+#Get token to clipboard
+super + g
+	/home/simon/Code/Scripts/SystemUtils copy
 
 #Function Keys
 
@@ -85,7 +94,7 @@ super + {h,j,k,l}
 
 #Shrink window
 super + shift  + {h,j,k,l}
-	bspc node -z {left 60 0,top 0 60,bottom 0 -60,right -60 0}
+	bspc node -z {right -60 0,bottom 0 -60,top 0 60,left 60 0}
 
 #Move a floating window
 super + {Left,Down,Up,Right}
