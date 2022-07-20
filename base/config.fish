@@ -12,7 +12,9 @@ if status is-interactive
 	
 end
 
-if status --is-login
+if status --is-login\
+		#Remove all items saved in clipboard
+
 		set -U -x PF_INFO "ascii title os wm shell kernel pkgs"
   	if test -z "$DISPLAY" -a $XDG_VTNR = 1
     		exec startx -- vt1 &> /dev/null

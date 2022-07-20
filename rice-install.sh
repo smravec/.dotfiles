@@ -52,6 +52,9 @@ sudo pacman -S starship --noconfirm
 
 cp ./rice/starship.toml ~/.config/
 
+echo "installing clipboard manager"
+yay -S clipster --noconfirm
+
 echo "installing gui apps"
 sudo pacman -S firefox --noconfirm
 sudo pacman -S krita vlc shotcut audacity libreoffice --noconfirm
