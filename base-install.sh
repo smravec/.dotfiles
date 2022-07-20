@@ -15,7 +15,7 @@ sudo systemctl enable reflector.service reflector.timer
 sudo systemctl start reflector.service reflector.timer
 
 echo "installing packages"
-sudo pacman -S man-db man-pages libmagick neovim --noconfirm
+sudo pacman -S man-db rsync man-pages libmagick neovim --noconfirm
 
 echo "setting up AUR"
 git clone https://aur.archlinux.org/yay.git /home/simon/Downloads/yay
